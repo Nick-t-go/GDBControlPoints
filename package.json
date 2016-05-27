@@ -1,0 +1,38 @@
+{
+  "name": "angularesri1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-cookies": "^1.5.5",
+    "angular-esri-map": "^1.1.4",
+    "angular-ui-router": "^0.2.18",
+    "body-parser": "^1.15.0",
+    "bootstrap": "^3.3.6",
+    "core-util-is": "^1.0.2",
+    "express": "^4.13.4",
+    "inherits": "^2.0.1",
+    "isarray": "^1.0.0",
+    "jquery": "^2.2.3",
+    "jquery-ui": "^1.10.5",
+    "ng-file-upload": "^12.0.4",
+    "nodemon": "^1.9.1",
+    "util-deprecate": "^1.0.2",
+    "wrappy": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon server/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nick-t-go/angularESRI1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nick-t-go/angularESRI1/issues"
+  },
+  "homepage": "https://github.com/Nick-t-go/angularESRI1#readme"
+}
