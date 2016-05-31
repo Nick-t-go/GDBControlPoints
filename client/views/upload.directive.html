@@ -1,29 +1,8 @@
-<div id="upload" class="panel-collapse collapse">
-    <div class="panel-body">
-         <form name="myForm">
-    <fieldset>
-      Project Number:
-      <input type="text" name="projNumber" ng-model="projNumber" size="31" required>
-      <i ng-show="myForm.projNumber.$error.required">*required</i>
-      <br>File:
-      <input type="file" ngf-select ng-model="txtFile" name="file"    
-             accept=".txt" ngf-max-size="2MB" required
-             ngf-model-invalid="errorFile" class="btn btn-primary btn-sm ">
-      <i ng-show="myForm.file.$error.required">*required</i><br>
-      <i ng-show="myForm.file.$error.maxSize">File too large 
-          {{errorFile.size / 1000000|number:1}}MB: max 2M</i>
-      <img ng-show="myForm.file.$valid" src="http://gayrondebruin.com/favicon.ico" class="thumb"> <button ng-click="txtFile = null" ng-show="txtFile" class="btn btn-primary btn-sm ">Remove</button>
-      <br>
-      <button class="btn btn-primary btn-sm" ng-disabled="!myForm.$valid" 
-              ng-click="uploadPic(txtFile)">Submit</button>
-      <span class="progress" ng-show="txtFile.progress >= 0">
-        <div style="width:{{txtFile.progress}}%" 
-            ng-bind="txtFile.progress + '%'"></div>
-      </span>
-      <span ng-show="txtFile.result">Upload Successful</span>
-      <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
-    </fieldset>
-    <br>
-  </form>
-    </div>
-</div>
+<form style="padding: 5px;">
+    <label for="inputButton" class="customUploadButton"><span class="glyphicon glyphicon-upload"></span>Choose File</label>
+    <input id="inputButton" type="file" file-model="myFile"/>
+    <input placeholder = "Insert Project #" id="projText" type="text" name="projNumber" ng-model="projNumber" size="15" required>
+    <i class="green" ng-show=myFile>{{myFile.name}} ready for upload!</i>
+    <i ng-show="projNumber.$error.required">*required</i>
+    <button  ng-disabled="!projNumber" class="btn btn-primary btn-sm" ng-click="uploadFile()">Submit</button>
+</form>

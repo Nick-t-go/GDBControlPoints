@@ -22,3 +22,18 @@ form .progress {
     background: orange;
     width: 0;
 }
+
+
+input[type="file"] {
+    display: none;
+}
+.customUploadButton {
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.green{
+    color: green;
+}
