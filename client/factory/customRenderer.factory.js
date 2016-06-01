@@ -15,8 +15,6 @@ app.factory('customRenderer', function(esriLoader) {
                             Color,
                             UniqueValueRenderer                         
                         ) {
-
-
                             var forceMain = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color("#9A670D"), 3);
                             var gravity = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color("#3BD815"), 3);
                             var outFall = new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color("#325DEE"), 3);

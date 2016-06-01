@@ -5,4 +5,5 @@
     <i class="green" ng-show=myFile>{{myFile.name}} ready for upload!</i>
     <i ng-show="projNumber.$error.required">*required</i>
     <button  ng-disabled="!projNumber" class="btn btn-primary btn-sm" ng-click="uploadFile()">Submit</button>
+    <i>{{confirmationMessage}}</i>
 </form>

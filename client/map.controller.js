@@ -411,14 +411,13 @@ app.controller('MapCtrl', function($scope, esriLoader, customRenderer, $timeout,
             };
 
             //Create new legend Create unique rendering class
-            $scope.styleInit = LegendInit.style($scope.layers, map);
 
             var doneOnce = false;
             $scope.legendVisible = false;
             $scope.showLegend = function() {
                 $scope.legendVisible = !$scope.legendVisible;
                 if (doneOnce === false) {
-                    $scope.styleInit();
+                    LegendInit.style($scope.layers, map);
                     doneOnce = true;
                 }
             };

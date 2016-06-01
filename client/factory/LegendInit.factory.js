@@ -1,9 +1,9 @@
-app.factory('LegendInit', function(esriLoader) {
+app.factory('LegendInit', function(esriLoader, customRenderer) {
 
             return {
 
-            	style: function(layers, map) {
-                layers.forEach(function(layer) {
+            	style: function(layers, map, scope) {
+                layers.forEach(function(layer, idx) {
                     var singleLayer = map.getLayer(layer.options.id);
                     if (singleLayer.types.length > 0 && layer.style.type == 'polygon') {
                         for (var i = 0; i < singleLayer.types.length; i++) {
@@ -14,7 +14,8 @@ app.factory('LegendInit', function(esriLoader) {
                             layer.style.tblField.push({ name: singleLayer.renderer._symbols[i].label, fill: fillColor, outline: outlineColor });
                         }
                     } else if (layer.currentRender) {
-                        $scope.changeRendering(layer, layer.currentRender);
+                        customRenderer[layer.currentRender](singleLayer, layer, map);
+                        singleLayer.redraw();
                     } else if (singleLayer.types.length > 0 && layer.style.type == 'polyline') {
                         singleLayer.renderer.infos.forEach(function(subLayer) {
                             var name = subLayer.label;
